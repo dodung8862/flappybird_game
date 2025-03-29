@@ -12,14 +12,6 @@
 #define INITIAL_SPEED 3
 #define MAX_PIPES 5
 
-    bool inside(int x, int y, SDL_Rect r) {
-        return x > r.x && x < r.x + r.w && y > r.y && y < r.y + r.h;
-    }
-
-    bool overlap(const SDL_Rect& r1, const SDL_Rect& r2) {
-        return inside(r1.x, r1.y, r2) || inside(r1.x + r1.w, r1.y, r2) || inside(r1.x, r1.y+r1.h, r2) || inside(r1.x+r1.w, r1.y+r1.h, r2);
-    }
-
     void Graphics::logErrorAndExit(const char* msg, const char* error)
     {
         SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_ERROR, "%s: %s", msg, error);
