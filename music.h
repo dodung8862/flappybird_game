@@ -1,4 +1,4 @@
-/*#ifndef MUSIC_H
+#ifndef MUSIC_H
 #define MUSIC_H
 
 #include <SDL_mixer.h>
@@ -7,29 +7,15 @@
 class Music {
     Mix_Music *gMusic;
 public:
-    Music();
-    Music(const std::string& path);
-    ~Music() ;
-
-    Music(const Music&) = delete;
-    Music& operator=(const Music&) = delete;
-
-    void play();
-    void pause();
-    void stop();
+    Mix_Music *loadMusic(const char* path);
+    void play(Mix_Music *gMusic);
 };
 
 class Sound {
     Mix_Chunk* gChunk;
 public:
-    Sound();
-    Sound(const std::string& path);
-    ~Sound() ;
-
-    Sound(const Sound&) = delete;
-    Sound& operator=(const Sound&) = delete;
-
-    void play();
+    Mix_Chunk* loadSound(const char* path);
+    void play(Mix_Chunk* gChunk);
 };
 
 

@@ -1,26 +1,20 @@
-/*#include "music.h"
-#include "exception.h"
-
-Music::Music() : gMusic{nullptr} {}
-
-Music::Music(const std::string& path) :Music()
-{
-    gMusic = Mix_LoadMUS(path.c_str());
-    if (gMusic == nullptr) {
-        logErrorAndExit("Could not load music! SDL_mixer Error: ", Mix_GetError());
+#include "music.h"
+#include <SDL_mixer.h>
+#include "graphics.h"
+    Mix_Music *Music::loadMusic(const char* path)
+    {
+        Mix_Music *gMusic = Mix_LoadMUS(path);
+        if (gMusic == nullptr) {
+            SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION,
+            SDL_LOG_PRIORITY_ERROR,
+            "Could not load music! SDL_mixer Error: %s", Mix_GetError());
+        }
+        return gMusic;
     }
-}
 
-Music::~Music()
-{
-    if (gMusic != nullptr) {
-        Mix_FreeMusic( gMusic );
-    }
-}
-
-void Music::play()
-{
-    if (gMusic != nullptr) {
+    void Music::play(Mix_Music *gMusic)
+    {
+        if (gMusic == nullptr) return;
         if (Mix_PlayingMusic() == 0) {
             Mix_PlayMusic( gMusic, -1 );
         }
@@ -28,44 +22,19 @@ void Music::play()
             Mix_ResumeMusic();
         }
     }
-}
 
-void Music::pause()
-{
-    if (Mix_PlayingMusic() == 1) {
-        Mix_PauseMusic();
+    Mix_Chunk* Sound::loadSound(const char* path) {
+        Mix_Chunk* gChunk = Mix_LoadWAV(path);
+        if (gChunk == nullptr) {
+            SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION,
+            SDL_LOG_PRIORITY_ERROR,
+            "Could not load sound! SDL_mixer Error: %s", Mix_GetError());
+        }
     }
-}
 
-void Music::stop()
-{
-    pause();
-    Mix_RewindMusic();
-}
-
-Sound::Sound() : gChunk{nullptr} {}
-
-Sound::Sound(const std::string& path)
-    : Sound()
-{
-    gChunk = Mix_LoadWAV(path.c_str());
-    if (gChunk == nullptr) {
-        logErrorAndExit("Could not load sound! SDL_mixer Error: ", Mix_GetError());
+    void Sound::play(Mix_Chunk* gChunk) {
+        if (gChunk != nullptr) {
+            Mix_PlayChannel( -1, gChunk, 0 );
+        }
     }
-}
-
-Sound::~Sound()
-{
-    if (gChunk != nullptr) {
-        Mix_FreeChunk(gChunk);
-    }
-}
-
-void Sound::play()
-{
-    if (gChunk != nullptr) {
-        Mix_PlayChannel( -1, gChunk, 0 );
-    }
-}
-*/
 

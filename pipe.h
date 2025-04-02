@@ -1,6 +1,7 @@
 #ifndef PIPE_H_INCLUDED
 #define PIPE_H_INCLUDED
 using namespace std;
+#include "music.h"
 struct Pite {
     int x; // vị trí
     int y;
@@ -14,7 +15,7 @@ struct Pite {
         rect.x = x;
         rect.y = y;
         rect.h = 104;
-        rect.w = CHEESE_SIZE;
+        rect.w = 10;
 
     }
 
@@ -31,9 +32,9 @@ struct Pite {
 
     bool overlap(const SDL_Rect& r1, const SDL_Rect& r2) ;
 
-    bool checkCollisionWithBird(SDL_Rect birdRect);
+    bool checkCollisionWithBird(SDL_Rect birdRect);    // Hàm xử lý va chạm
 
-    void updateScore(int birdX, int& score);
+    void updateScore(int birdX, int& score, Mix_Chunk *gJump, Sound& sound);    // Hàm cộng điểm
 };
 
 

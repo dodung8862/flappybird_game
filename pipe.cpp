@@ -6,6 +6,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include "music.h"
 #include <SDL_mixer.h>
 #define CHEESE_SIZE 10
 #define INITIAL_SPEED 3
@@ -68,12 +69,13 @@
         return false;  // Không có va chạm
     }
 
-    void Pite::updateScore(int birdX, int& score) {
-    for (int i = 0; i < pipes.size(); ++i) {
-        if (birdX > pipes[i].first + PIPE_WIDTH && !scoredPipes[i]) {
-            score++;
-            scoredPipes[i] = true;  // Đánh dấu cột đã được cộng điểm
-            std::cout << "Score: " << score << std::endl;
+    void Pite::updateScore(int birdX, int& score, Mix_Chunk *gJump, Sound& sound) {
+        for (int i = 0; i < pipes.size(); ++i) {
+            if (birdX > pipes[i].first + PIPE_WIDTH && !scoredPipes[i]) {
+                score++;
+                sound.play(gJump);
+                scoredPipes[i] = true;  // Đánh dấu cột đã được cộng điểm
+                std::cout << "Score: " << score << std::endl;
+            }
         }
     }
-}

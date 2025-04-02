@@ -41,3 +41,4 @@ void Sprite::update(bool mouseClick){
     const SDL_Rect* Sprite::getCurrentClip() const {
         return &(clips[currentFrame]);
     }
+

@@ -10,10 +10,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <SDL_mixer.h>
-#define CHEESE_SIZE 10
 #define INITIAL_SPEED 3
-#define MOUSE_SIZE 5
-#define MAX_PIPES 5
 
     struct Sprite {
     SDL_Texture* texture;

@@ -8,6 +8,7 @@
 #include "background.h"
 #include "pipe.h"
 #include "sprite.h"
+#include "music.h"
 #include <ctime>
 using namespace std;
 
@@ -32,6 +33,14 @@ int main(int argc, char *argv[])
 
     StartScreen(graphics);
 
+    Music music;
+    Mix_Music *gMusic = music.loadMusic("RunningAway.mp3");
+    music.play(gMusic);
+
+    Sound sound;
+    Mix_Chunk *gJump = sound.loadSound("jump.wav");
+    Mix_Chunk *gLost = sound.loadSound("lost.wav");
+
     int score = 0;
 
     ScrollingBackground background;
@@ -52,14 +61,10 @@ int main(int argc, char *argv[])
 
 
     SDL_SetRenderDrawColor(graphics.renderer, 0, 0, 0, 255); // Màu nền đen
-    //SDL_RenderClear(graphics.renderer);
 
     SDL_RenderPresent(graphics.renderer);
 
     pite.addPite();
-
-    //Music mus {MUSIC_THEME_PATH};
-    //mus.play();
 
     bool quit = false;
     SDL_Event e;
@@ -81,12 +86,13 @@ int main(int argc, char *argv[])
 
         if (pite.checkCollisionWithBird(birdRect)) {
             std::cout << "Game Over! Bird hit a pipe." << std::endl;
+            sound.play(gLost);
             quit = true;  // Kết thúc game nếu xảy ra va chạm
         }
 
         pite.updatePites();
 
-        pite.updateScore(bird.x, score);
+        pite.updateScore(bird.x, score, gJump, sound);
 
         bird.tick();
 
@@ -108,8 +114,11 @@ int main(int argc, char *argv[])
 
         SDL_Delay(40);
     }
+    if (gMusic != nullptr) Mix_FreeMusic( gMusic );
+    if (gJump != nullptr) Mix_FreeChunk( gJump);
 
     EndScreen(graphics,score);
+
     waitUntilKeyPressed();
     SDL_DestroyTexture( background.texture );
 

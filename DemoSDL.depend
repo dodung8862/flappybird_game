@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1743228669 source:c:\hoc lap trinh c++\demosdl\main.cpp
+1743601227 source:c:\hoc lap trinh c++\demosdl\main.cpp
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
@@ -10,11 +10,12 @@
 	"background.h"
 	"pipe.h"
 	"sprite.h"
+	"music.h"
 	<ctime>
 
 1743078714 c:\hoc lap trinh c++\demosdl\def.h
 
-1743090771 c:\hoc lap trinh c++\demosdl\graphics.h
+1743589307 c:\hoc lap trinh c++\demosdl\graphics.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
@@ -25,10 +26,10 @@
 	<iostream>
 	<SDL_mixer.h>
 
-1743228669 c:\hoc lap trinh c++\demosdl\game.h
+1743589307 c:\hoc lap trinh c++\demosdl\game.h
 	"graphics.h"
 
-1743178682 source:c:\hoc lap trinh c++\demosdl\graphics.cpp
+1743270753 source:c:\hoc lap trinh c++\demosdl\graphics.cpp
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
@@ -40,10 +41,12 @@
 	<ctime>
 	<SDL_mixer.h>
 
-1742790076 source:c:\hoc lap trinh c++\demosdl\music.cpp
-	"exception.h"
+1743594293 source:c:\hoc lap trinh c++\demosdl\music.cpp
+	"music.h"
+	<SDL_mixer.h>
+	"graphics.h"
 
-1743083509 source:c:\hoc lap trinh c++\demosdl\sprite.cpp
+1743589307 source:c:\hoc lap trinh c++\demosdl\sprite.cpp
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
@@ -54,7 +57,7 @@
 	<ctime>
 	<SDL_mixer.h>
 
-1742992692 source:c:\hoc lap trinh c++\demosdl\background.cpp
+1743589307 source:c:\hoc lap trinh c++\demosdl\background.cpp
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
@@ -67,7 +70,7 @@
 
 1742992692 c:\hoc lap trinh c++\demosdl\background.h
 
-1743170879 c:\hoc lap trinh c++\demosdl\sprite.h
+1743589519 c:\hoc lap trinh c++\demosdl\sprite.h
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
@@ -78,9 +81,10 @@
 	<ctime>
 	<SDL_mixer.h>
 
-1743220785 c:\hoc lap trinh c++\demosdl\pipe.h
+1743600968 c:\hoc lap trinh c++\demosdl\pipe.h
+	"music.h"
 
-1743220988 source:c:\hoc lap trinh c++\demosdl\pipe.cpp
+1743600924 source:c:\hoc lap trinh c++\demosdl\pipe.cpp
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
@@ -89,8 +93,15 @@
 	<vector>
 	<cstdlib>
 	<ctime>
+	"music.h"
 	<SDL_mixer.h>
 
-1743254386 source:c:\hoc lap trinh c++\demosdl\game.cpp
+1743602256 source:c:\hoc lap trinh c++\demosdl\game.cpp
 	"graphics.h"
+
+1743595312 c:\hoc lap trinh c++\demosdl\music.h
+	<SDL_mixer.h>
+	<string>
+
+1743597013 source:c:\hoc lap trinh c++\demosdl\logic.cpp
 
