@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1744042813 source:c:\hoc lap trinh c++\demosdl\main.cpp
+1744043509 source:c:\hoc lap trinh c++\demosdl\main.cpp
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
@@ -70,7 +70,7 @@
 
 1742992692 c:\hoc lap trinh c++\demosdl\background.h
 
-1744043498 c:\hoc lap trinh c++\demosdl\sprite.h
+1744043875 c:\hoc lap trinh c++\demosdl\sprite.h
 	<SDL.h>
 	<SDL_image.h>
 	"graphics.h"
