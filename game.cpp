@@ -1,4 +1,3 @@
-#define INITIAL_SPEED 3
 #include "graphics.h"
 
 void render(const Sprite& bird, const Graphics& graphics) {
@@ -14,11 +13,11 @@ void StartScreen(Graphics& graphics) {
 
     SDL_Texture* titleTexture = graphics.renderText("FlappyBird", font, color);
 
-    SDL_Texture* startButtonTexture = graphics.renderText("START", font, white);
+    SDL_Texture* startTexture = graphics.renderText("START", font, white);
     SDL_Texture* startBirdTexture = graphics.loadTexture("sprite-sceen.png");
 
     SDL_Rect titleRect = {100, 200, 400, 100};
-    SDL_Rect startButtonRect = {225, 555, 120, 40};
+    SDL_Rect startRect = {225, 555, 120, 40};
     SDL_Rect startBirdRect = {250, 380, 85, 60};
 
     bool quit = false;
@@ -32,7 +31,7 @@ void StartScreen(Graphics& graphics) {
                 int x, y;
                 SDL_GetMouseState(&x, &y);
 
-                if (x >= startButtonRect.x && x <= startButtonRect.x + startButtonRect.w && y >= startButtonRect.y && y <= startButtonRect.y + startButtonRect.h) {
+                if ((x >= startRect.x && x <= startRect.x + startRect.w) && (y >= startRect.y && y <= startRect.y + startRect.h)) {
                     std::cout << "Game Started!" << std::endl;
                     return;
                 }
@@ -42,18 +41,18 @@ void StartScreen(Graphics& graphics) {
         SDL_RenderClear(graphics.renderer);
         SDL_RenderCopy(graphics.renderer, backgroundTexture, NULL, NULL);
         SDL_RenderCopy(graphics.renderer, titleTexture, NULL, &titleRect);
-        SDL_RenderCopy(graphics.renderer, startButtonTexture, NULL, &startButtonRect);
+        SDL_RenderCopy(graphics.renderer, startTexture, NULL, &startRect);
         SDL_RenderCopy(graphics.renderer, startBirdTexture, NULL, &startBirdRect);
         SDL_RenderPresent(graphics.renderer);
     }
 
     SDL_DestroyTexture(titleTexture);
-    SDL_DestroyTexture(startButtonTexture);
+    SDL_DestroyTexture(startTexture);
 }
 
 
 void RenderScore(Graphics& graphics, int score) {
-    std::string scoreText = std::to_string(score);
+    string scoreText = to_string(score);
 
     TTF_Font* font = graphics.loadFont("04B_19.TTF", 80);
 
@@ -90,7 +89,6 @@ void EndScreen(Graphics& graphics, int score){
     SDL_RenderCopy(graphics.renderer, scoreTexture, NULL, &scoreRect);
     SDL_RenderPresent(graphics.renderer);
 
-    // Giải phóng texture
     SDL_DestroyTexture(GameOverTexture);
     SDL_DestroyTexture(scoreTexture);
 }

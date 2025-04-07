@@ -10,7 +10,6 @@
 #include "sprite.h"
 #include "music.h"
 #include <ctime>
-using namespace std;
 
 using namespace std;
 
@@ -46,23 +45,15 @@ int main(int argc, char *argv[])
     ScrollingBackground background;
     background.setTexture(graphics.loadTexture("background-day.png"));
 
-    Sprite bird(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
-    bird.x = SCREEN_WIDTH / 2;
-    bird.y = SCREEN_HEIGHT / 2;
+    Sprite bird;
 
-
-    SDL_Texture* birdTexture = graphics.loadTexture(BIRD_SPRITE_FILE);
+    SDL_Texture* birdTexture = graphics.loadTexture("sprite.png");
     bird.init(birdTexture, BIRD_FRAMES, BIRD_CLIPS, 150, SCREEN_HEIGHT / 3);
 
-    Pite pite(100, 100);
+    Pite pite;
 
     SDL_Texture* topPipeTexture = graphics.loadTexture("pipe-bottom1.png");
     SDL_Texture* bottomPipeTexture = graphics.loadTexture("pipe-top1.png");
-
-
-    SDL_SetRenderDrawColor(graphics.renderer, 0, 0, 0, 255); // Màu nền đen
-
-    SDL_RenderPresent(graphics.renderer);
 
     pite.addPite();
 
@@ -85,7 +76,7 @@ int main(int argc, char *argv[])
         SDL_Rect birdRect = {bird.x, bird.y, 55, 48};
 
         if (pite.checkCollisionWithBird(birdRect)) {
-            std::cout << "Game Over! Bird hit a pipe." << std::endl;
+            cout << "Game Over! Bird hit a pipe." << endl;
             sound.play(gLost);
             quit = true;  // Kết thúc game nếu xảy ra va chạm
         }
@@ -100,7 +91,6 @@ int main(int argc, char *argv[])
         SDL_RenderClear(graphics.renderer);  // Xóa màn hình trước khi render frame mới
 
         graphics.prepareScene();
-
 
         graphics.render1(background);
 
@@ -120,10 +110,10 @@ int main(int argc, char *argv[])
     EndScreen(graphics,score);
 
     waitUntilKeyPressed();
+
     SDL_DestroyTexture( background.texture );
 
 	SDL_DestroyTexture( birdTexture ); birdTexture = nullptr;
-
 
     graphics.quit();
     return 0;

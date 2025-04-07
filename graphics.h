@@ -10,10 +10,6 @@
 #include <iostream>
 #include <SDL_mixer.h>
 
-bool inside(int x, int y, SDL_Rect r);
-
-bool overlap(const SDL_Rect& r1, const SDL_Rect& r2);
-
 struct Graphics {
     SDL_Renderer *renderer;
 	SDL_Window *window;
@@ -41,10 +37,6 @@ struct Graphics {
     void render1(const ScrollingBackground& background);
 
     void render2(int x, int y, const Sprite& sprite) const;
-
-
 };
-
-
 
 #endif // GRAPHICS_H_INCLUDED

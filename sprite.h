@@ -1,15 +1,10 @@
 #ifndef SPRITE_H_INCLUDED
 #define SPRITE_H_INCLUDED
-
-#include <iostream>
 #include <SDL.h>
 #include <SDL_image.h>
 #include "graphics.h"
 #include "def.h"
 #include <vector>
-#include <cstdlib>
-#include <ctime>
-#include <SDL_mixer.h>
 #define INITIAL_SPEED 3
 
     struct Sprite {
@@ -19,12 +14,6 @@
     int x, y;
     int currentFrame = 0;
     double speed = INITIAL_SPEED;
-    Sprite(int x, int y) {
-        rect.x = x;
-        rect.y = y;
-        rect.h = 68;
-        rect.w = 48;
-    }
 
     void update(bool mouseClick);
 

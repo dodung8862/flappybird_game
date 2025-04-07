@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1743601227 source:c:\hoc lap trinh c++\demosdl\main.cpp
+1744042813 source:c:\hoc lap trinh c++\demosdl\main.cpp
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
@@ -13,9 +13,9 @@
 	"music.h"
 	<ctime>
 
-1743078714 c:\hoc lap trinh c++\demosdl\def.h
+1744042803 c:\hoc lap trinh c++\demosdl\def.h
 
-1743589307 c:\hoc lap trinh c++\demosdl\graphics.h
+1744042803 c:\hoc lap trinh c++\demosdl\graphics.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
@@ -26,10 +26,10 @@
 	<iostream>
 	<SDL_mixer.h>
 
-1743589307 c:\hoc lap trinh c++\demosdl\game.h
+1744042803 c:\hoc lap trinh c++\demosdl\game.h
 	"graphics.h"
 
-1743270753 source:c:\hoc lap trinh c++\demosdl\graphics.cpp
+1744006691 source:c:\hoc lap trinh c++\demosdl\graphics.cpp
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
@@ -46,7 +46,7 @@
 	<SDL_mixer.h>
 	"graphics.h"
 
-1743589307 source:c:\hoc lap trinh c++\demosdl\sprite.cpp
+1744042803 source:c:\hoc lap trinh c++\demosdl\sprite.cpp
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
@@ -57,7 +57,7 @@
 	<ctime>
 	<SDL_mixer.h>
 
-1743589307 source:c:\hoc lap trinh c++\demosdl\background.cpp
+1744006691 source:c:\hoc lap trinh c++\demosdl\background.cpp
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
@@ -70,21 +70,17 @@
 
 1742992692 c:\hoc lap trinh c++\demosdl\background.h
 
-1743589519 c:\hoc lap trinh c++\demosdl\sprite.h
-	<iostream>
+1744043498 c:\hoc lap trinh c++\demosdl\sprite.h
 	<SDL.h>
 	<SDL_image.h>
 	"graphics.h"
 	"def.h"
 	<vector>
-	<cstdlib>
-	<ctime>
-	<SDL_mixer.h>
 
-1743600968 c:\hoc lap trinh c++\demosdl\pipe.h
+1744043407 c:\hoc lap trinh c++\demosdl\pipe.h
 	"music.h"
 
-1743600924 source:c:\hoc lap trinh c++\demosdl\pipe.cpp
+1744038686 source:c:\hoc lap trinh c++\demosdl\pipe.cpp
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
@@ -96,7 +92,7 @@
 	"music.h"
 	<SDL_mixer.h>
 
-1743602256 source:c:\hoc lap trinh c++\demosdl\game.cpp
+1744039289 source:c:\hoc lap trinh c++\demosdl\game.cpp
 	"graphics.h"
 
 1743595312 c:\hoc lap trinh c++\demosdl\music.h

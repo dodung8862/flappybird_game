@@ -11,7 +11,7 @@
 #define INITIAL_SPEED 3
 #define MAX_PIPES 5
 
-void ScrollingBackground::setTexture(SDL_Texture* _texture) {
+    void ScrollingBackground::setTexture(SDL_Texture* _texture) {
         texture = _texture;
         SDL_QueryTexture(texture, NULL, NULL, &width, &height);
     }

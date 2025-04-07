@@ -13,7 +13,4 @@ bool checkCollision(const SDL_Rect& a, const SDL_Rect& b);
 
 void EndScreen(Graphics& graphics, int score);
 
-void gameOver();
-
-
 #endif // GAME_H_INCLUDED
