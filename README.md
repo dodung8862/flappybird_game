@@ -1,5 +1,5 @@
 # DemoSDL
  GameProject
 # Một vài Sceenshot
-![Start Screen](./start.png)
-![Game Over](./gameover.png)
+![Start Screen](./start.PNG)
+![Game Over](./game_over.PNG)
